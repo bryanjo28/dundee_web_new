@@ -1,69 +1,34 @@
 import Image from "next/image";
+import { restaurant } from "./restaurant-content";
+
+const dishes = [
+  { name: "Chicken Steak", note: "Ayam saus, nasi hangat, lengkap sama sayurnya.", color: "steak", mark: "01", image: "/assets/food/chicken_steak.png" },
+  { name: "Rice", note: "A little comfort in every spoonful.", color: "rice", mark: "02", image: "/assets/food/Chicken serundeng.jpeg" },
+  { name: "Chicken Pepper", note: "Gurih pedas dengan kentang goreng renyah.", color: "chicken", mark: "03", image: "/assets/food/chicken pepper.jpeg" },
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <>
+    <header className="site-header container" id="beranda">
+      <nav className="nav-glass" aria-label="Navigasi utama">
+        <a className="brand" href="#beranda" aria-label="Dundee, beranda"><Image src="/assets/dundee_logo.png" alt="" width={60} height={60} priority /><span>DUNDEE<small>STEAK · RICE · CHICKEN</small></span></a>
+        <div className="desktop-links"><a href="#menu">Menu</a><a href="#cerita">Cerita kami</a><a href="#kunjungi">Lokasi</a></div>
+        <a className="button nav-action" href={restaurant.whatsapp ? `https://wa.me/${restaurant.whatsapp}` : "#pesan"}>Pesan Sekarang <span aria-hidden="true">↗</span></a>
+        <details className="mobile-nav"><summary aria-label="Buka navigasi">Menu <span aria-hidden="true">☰</span></summary><div><a href="#menu">Menu</a><a href="#cerita">Cerita kami</a><a href="#kunjungi">Lokasi</a><a href="#pesan">Pesan sekarang</a></div></details>
+      </nav>
+    </header>
+    <main>
+      <section className="hero container">
+        <div className="hero-copy"><span className="eyebrow"><i /> MADE FOR GOOD TIMES</span><h1>Lapar boleh.<br />Makan harus <em>seru.</em></h1><p>Steak juicy, rice yang comforting, chicken yang bikin rebutan. Pilih favoritmu, kumpulkan orang-orangmu.</p><div className="hero-actions"><a className="button" href="#pesan">Pesan Sekarang <span aria-hidden="true">↗</span></a><a className="text-link" href="#menu">Lihat Menu <span aria-hidden="true">↓</span></a></div><div className="hero-proof"><span className="proof-stars" aria-label="Lima bintang">★★★★★</span><span>Enak dinikmati bareng-bareng</span></div></div>
+        <div className="hero-stage"><div className="hero-image" data-slot="hero">{restaurant.heroImage ? <Image src={restaurant.heroImage} alt="Hidangan favorit Dundee" fill priority sizes="(min-width: 900px) 52vw, 95vw" /> : <Image src="/assets/food/chicken_steak.png" alt="Menu steak dan ayam favorit Dundee" fill priority sizes="(min-width: 900px) 52vw, 95vw" />}</div><span className="hero-sticker">GOOD<br />FOOD<br /><b>GOOD<br />MOOD!</b></span><div className="hero-caption"><span>01 / THE GOOD STUFF</span><span>Steak · Rice · Chicken</span></div></div>
+      </section>
+      <div className="ticker" aria-label="Steak, rice, chicken, repeat"><div>STEAK <b>✳</b> RICE <b>✳</b> CHICKEN <b>✳</b> REPEAT <b>✳</b> STEAK <b>✳</b> RICE <b>✳</b> CHICKEN <b>✳</b> REPEAT <b>✳</b></div></div>
+      <section className="menu-section container" id="menu"><div className="section-top"><div><span className="eyebrow">PICK YOUR HAPPY</span><h2>Yang mana dulu<br />nih?</h2></div><p>Tiga mood. Banyak alasan buat balik lagi.<br />Mulai dari yang paling kamu suka.</p></div><div className="dish-grid">{dishes.map((dish) => <article className={`dish-card ${dish.color}`} key={dish.name}><div className="dish-art"><Image src={dish.image} alt={`${dish.name} Dundee`} fill sizes="(max-width: 650px) 45vw, 30vw" /><span className="dish-number">{dish.mark} / DUNDEE FAVORITE</span><span className="dish-scribble" aria-hidden="true">Yum!</span></div><div className="dish-info"><div><h3>{dish.name}</h3><p>{dish.note}</p></div><span className="dish-arrow" aria-hidden="true">↗</span></div></article>)}</div><div className="dish-extras"><article><Image src="/assets/food/chicken cheese.jpeg" alt="Chicken cheese dengan kentang goreng" fill sizes="(max-width: 650px) 90vw, 30vw" /><span>Chicken Cheese</span></article><article><Image src="/assets/food/chicken balacan.png" alt="Ayam bakar sambal belacan" fill sizes="(max-width: 650px) 90vw, 30vw" /><span>Ayam Bakar Belacan</span></article></div><p className="menu-note">Menu lengkap dan harga? Langsung tanya tim Dundee, ya.</p></section>
+      <section className="story-section" id="cerita"><div className="container story-grid"><div className="story-art"><div className="story-logo"><Image src="/assets/dundee_logo.png" alt="Maskot Dundee" width={380} height={380} /></div><span className="story-sticker">GATHER<br />& EAT!</span></div><div className="story-copy"><span className="eyebrow">CERITA DI BALIK MEJA</span><h2>Makanan enak tuh<br />makin enak kalau <em>rame.</em></h2><p>{restaurant.story}</p><div className="perks"><div><b>01</b><span>Rasa yang bikin<br />pengen balik</span></div><div><b>02</b><span>Menu buat<br />semua selera</span></div><div><b>03</b><span>Paling pas<br />buat rame-rame</span></div></div></div></div></section>
+      <section className="quote-section container"><span className="eyebrow">KATA MEREKA</span><div className="quote-card"><span className="quote-mark">“</span><div><p>Tempat yang pas buat makan enak tanpa banyak mikir. Semua di meja punya favoritnya sendiri.</p><span className="quote-by">— Catatan dari meja Dundee <i>★★★★★</i></span></div><span className="quote-doodle" aria-hidden="true">♥</span></div></section>
+      <section className="order-section" id="pesan"><div className="container order-inner"><div><span className="eyebrow">WAKTUNYA MAKAN</span><h2>Udah kebayang<br />rasanya, kan?</h2><p>Yuk, ajak temanmu dan tentukan menu andalan hari ini.</p></div><div className="order-action">{restaurant.whatsapp ? <a className="button button-light" href={`https://wa.me/${restaurant.whatsapp}`} target="_blank" rel="noopener noreferrer">Pesan via WhatsApp <span>↗</span></a> : <a className="button button-light" href="#kunjungi">Pesan Sekarang <span>↗</span></a>}<span>Steak · Rice · Chicken<br />Bikin hari biasa jadi lebih seru.</span></div><span className="order-spark" aria-hidden="true">✳</span></div></section>
+      <section className="visit-section container" id="kunjungi"><div className="visit-heading"><span className="eyebrow">MEJA KAMU MENUNGGU</span><h2>Main ke Dundee.</h2><p>Makan bareng, ketawa bareng. Begini harusnya.</p></div><div className="visit-card"><div className="visit-pin"><span>⌖</span><small>COME<br />ON IN!</small></div><div className="visit-details"><span className="eyebrow">FIND YOUR WAY</span><h3>Temukan Dundee</h3><p>{restaurant.address || "Info lokasi Dundee segera hadir. Simpan dulu halaman ini, ya!"}</p>{restaurant.hours && <p className="visit-hours">Buka: {restaurant.hours}</p>}</div><div className="visit-links">{restaurant.mapsUrl ? <a className="button" href={restaurant.mapsUrl} target="_blank" rel="noopener noreferrer">Buka petunjuk arah <span>↗</span></a> : <span className="location-soon">Detail lokasi menyusul</span>}{restaurant.whatsapp && <a className="text-link" href={`https://wa.me/${restaurant.whatsapp}`} target="_blank" rel="noopener noreferrer">Tanya dulu via WhatsApp ↗</a>}</div></div></section>
+    </main>
+    <footer className="site-footer"><div className="container footer-main"><a className="footer-brand" href="#beranda"><Image src="/assets/dundee_logo.png" alt="" width={74} height={74} /><span>DUNDEE<small>GOOD FOOD. GOOD MOOD.</small></span></a><p>Steak · Rice · Chicken<br />Paling enak dinikmati bareng.</p><a href="#beranda" className="back-top">Balik ke atas ↑</a></div><div className="container footer-bottom"><span>© Dundee {new Date().getFullYear()}</span><span>Dibuat dengan rasa lapar dan hati senang.</span></div></footer>
+  </>;
 }

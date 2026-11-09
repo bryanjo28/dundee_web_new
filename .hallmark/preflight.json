@@ -1,0 +1,6 @@
+﻿{
+  "scanned": "2026-10-30",
+  "findings": { "framework": "Next.js 16.4.3 App Router", "fonts": "Geist via app/layout.tsx", "palette": "Brand logo: navy, red, yellow", "material": "public/assets/dundee_logo.png; no food photographs supplied" },
+  "preserve": ["Next.js", "Geist", "user logo"],
+  "introduce": ["restaurant landing page", "brand tokens", "glass surfaces", "menu category filters", "reduced-motion-aware scroll reveals", "editable content module"]
+}

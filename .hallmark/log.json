@@ -1,0 +1,18 @@
+﻿[
+  {
+    "theme": "bloom",
+    "shape": "Marquee Hero",
+    "hero": "Ledge",
+    "nav": "edge-aligned glass",
+    "footer": "statement",
+    "axes": "light/grotesk-sans/warm",
+    "imagery": "user logo; labelled food-photo slots",
+    "photos": [],
+    "entry": "app/page.tsx",
+    "fingerprint": "dundee-restaurant-78d954",
+    "sections": ["hero", "category band", "filterable menu", "story", "visit", "footer"],
+    "signature": "Dundee chef emblem on a frosted menu cover",
+    "waived": ["1", "59", "81"],
+    "prompt": "Dundee restaurant template, glass design, restrained gradients, scroll animation, real content to follow"
+  }
+]

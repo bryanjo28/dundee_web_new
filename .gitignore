@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Hallmark local preview output
+/.hallmark/shots/
+/.hallmark/salt
+/.hallmark/verify.cjs
