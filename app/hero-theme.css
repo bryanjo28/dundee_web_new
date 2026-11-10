@@ -1,0 +1,21 @@
+/* Warm ivory atmosphere, fine sand contours and a grounded food shadow. */
+.hero-band { position:relative; isolation:isolate; background:radial-gradient(ellipse at 78% 42%,#fffaf2 0%,#F7F3EA 65%); }
+.hero-band::before,.hero-band::after { content:""; position:absolute; pointer-events:none; z-index:-1; border:1px solid #b8844f1c; border-radius:50%; width:780px; height:480px; right:-160px; top:10px; transform:rotate(-27deg); }
+.hero-band::after { width:900px; height:600px; right:-220px; top:-50px; box-shadow:0 0 0 36px #c79b6409,0 0 0 72px #c79b6406; }
+.hero-stage { isolation:isolate; }
+.hero-stage::before { content:""; position:absolute; z-index:-1; inset:8% -3% 10%; border:1px solid #b8844f22; border-radius:50%; transform:rotate(-18deg); }
+.hero-stage::after { content:""; position:absolute; z-index:-1; left:12%; right:8%; bottom:11%; height:14%; border-radius:50%; background:#704a2940; filter:blur(24px); transform:rotate(-5deg); }
+.hero-image { z-index:0; }
+.hero-image>img:not(.hero-logo) { filter:drop-shadow(0 20px 16px #704a292b); transform:translateY(-10px) rotate(-3deg); }
+.hero-sticker { z-index:2; background:var(--red); color:white; border-color:#fffaf2; box-shadow:0 8px 20px #8e1c302b; }
+.hero-sticker b { color:white; }
+.hero-caption { position:relative; z-index:1; }
+@media(max-width:650px) {
+  .hero-band::before { width:500px; height:350px; top:auto; bottom:20px; }
+  .hero-band::after { width:600px; height:450px; top:auto; bottom:-30px; }
+  .hero-image>img:not(.hero-logo) { transform:translateY(-4px) rotate(-2deg); }
+  .hero-stage::after { filter:blur(16px); }
+}
+
+.header-slot,.site-header { background:#F7F3EA; }
+.site-header.is-floating { background:transparent; }

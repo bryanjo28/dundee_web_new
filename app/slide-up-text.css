@@ -1,0 +1,10 @@
+.menu-section .menu-heading { display:block; width:100%; }
+.menu-heading>div { width:100%; min-width:0; }
+.menu-heading h2 { max-width:none; font-size:clamp(2.8rem,5.5vw,5.1rem); line-height:1.12; }
+.slide-up-mask { display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.08em; margin-bottom:-.08em; }
+.slide-up-word { display:inline-block; }
+.slide-up-text[data-ready="true"] .slide-up-word { transform:translateY(115%); transition:transform .65s cubic-bezier(.22,1,.36,1); }
+.slide-up-text[data-ready="true"][data-visible="true"] .slide-up-word { transform:translateY(0); transition-delay:var(--word-delay,0ms); }
+@media(prefers-reduced-motion:reduce) {
+  .slide-up-text[data-ready="true"] .slide-up-word { transform:none; transition:none; }
+}

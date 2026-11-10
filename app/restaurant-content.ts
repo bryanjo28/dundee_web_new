@@ -1,11 +1,11 @@
 ﻿// Put photos in public/assets and use paths such as /assets/steak.jpg.
 export const restaurant = {
-  heroImage: "", // Landscape food photograph, recommended 1600 x 1200.
+  heroImage: "/assets/food/chicken-steak-hero.png", // Landscape food photograph, recommended 1600 x 1200.
   story: "Bagian ini menunggu cerita asli Dundee. Ceritakan awal perjalanan restoran, inspirasi di balik hidangan, dan suasana yang ingin dibagikan bersama para tamu.",
-  address: "",
-  hours: "",
-  whatsapp: "", // Country code + number, digits only, such as 628xxxxxxxxxx.
-  mapsUrl: "",
+  address: "Royal Plaza, Jl. Ahmad Yani No.16-18 Lt 3, Wonokromo, Kec. Wonokromo, Surabaya, Jawa Timur 60231",
+  hours: "10.00-22.00",
+  whatsapp: "6281332666688", // Country code + number, digits only, such as 628xxxxxxxxxx.
+  mapsUrl: "https://share.google/ywA8IdQO3dpp47Hlz",
 };
 export const categories = ["Semua", "Steak", "Rice", "Chicken"] as const;
 export type Category = (typeof categories)[number];
