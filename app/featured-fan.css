@@ -1,0 +1,56 @@
+.favorites-grid.featured-fan {
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  max-width:1120px;
+  margin-inline:auto;
+  padding:50px 22px 58px;
+  gap:0;
+  isolation:isolate;
+}
+.featured-fan-item {
+  position:relative;
+  flex:1 1 0;
+  min-width:0;
+  margin-inline:-8px;
+}
+.featured-fan .food-card {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  transform:none;
+  rotate:var(--fan-angle,0deg);
+  transform-origin:50% 85%;
+  transition:rotate .35s,box-shadow .35s;
+  box-shadow:0 4px 0 #e6e2da,0 20px 40px #14234512;
+}
+.featured-fan-item:first-child { --fan-angle:-5deg; margin-top:24px; }
+.featured-fan-item:last-child { --fan-angle:5deg; margin-top:24px; }
+.featured-fan-item:nth-child(2) .food-card {
+  border-color:#dfd4c4;
+  background:#f7f3ea;
+  box-shadow:0 5px 0 #e7dfd2,0 24px 48px #51341c1c;
+}
+.featured-fan .food-card-photo { aspect-ratio:1.05; }
+.featured-fan .food-card-spotlight .food-card-photo { background:radial-gradient(ellipse at 50% 45%,#fffdf7,#eee4d4); }
+.featured-fan .food-card-spotlight .food-card-photo>img { filter:drop-shadow(0 15px 10px #704a292b); }
+.featured-fan .food-card-copy { flex:1; }
+@media(hover:hover) and (pointer:fine) {
+  .featured-fan-item:hover .food-card { rotate:0deg; transform:none; box-shadow:0 5px 0 #e6e2da,0 28px 48px #14234520; }
+}
+@media(max-width:900px) {
+  .favorites-grid.featured-fan { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; padding:12px 0 20px; }
+  .featured-fan-item { margin:0!important; --fan-angle:0deg!important; }
+}
+@media(max-width:650px) {
+  .favorites-grid.featured-fan { grid-template-columns:1fr; gap:22px; padding-block:0 8px; }
+  .featured-fan .food-card-photo { aspect-ratio:1.25; }
+}
+@media(hover:none),(pointer:coarse) {
+  .featured-fan-item { transform:none!important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .featured-fan .food-card { transition:none; }
+  .featured-fan-item { transform:none!important; }
+  .featured-fan-item:hover .food-card { rotate:var(--fan-angle,0deg); }
+}

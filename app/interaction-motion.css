@@ -1,0 +1,16 @@
+/* Animata-inspired arrow interaction; the resting position stays clear and stable. */
+.button>.lucide-arrow-up-right,.text-link>.lucide-arrow-up-right,
+.button>.lucide-arrow-down,.text-link>.lucide-arrow-down {
+  flex-shrink:0;
+  transition:translate .22s cubic-bezier(.22,1,.36,1);
+}
+@media(hover:hover) and (pointer:fine) {
+  .button:hover>.lucide-arrow-up-right,.text-link:hover>.lucide-arrow-up-right { translate:3px -3px; }
+  .button:hover>.lucide-arrow-down,.text-link:hover>.lucide-arrow-down { translate:0 3px; }
+}
+.button:focus-visible>.lucide-arrow-up-right,.text-link:focus-visible>.lucide-arrow-up-right { translate:3px -3px; }
+.button:focus-visible>.lucide-arrow-down,.text-link:focus-visible>.lucide-arrow-down { translate:0 3px; }
+@media(prefers-reduced-motion:reduce) {
+  .button>.lucide-arrow-up-right,.text-link>.lucide-arrow-up-right,
+  .button>.lucide-arrow-down,.text-link>.lucide-arrow-down { translate:none!important; transition:none; }
+}

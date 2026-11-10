@@ -1,0 +1,5 @@
+.brand .brand-wordmark { width:160px; height:56px; object-fit:contain; }
+.footer-brand .footer-tagline { color:var(--yellow); font-size:clamp(1.8rem,3.2vw,2.8rem); font-weight:700; line-height:1.08; letter-spacing:-.045em; }
+@media(max-width:650px) {
+  .brand .brand-wordmark { width:128px; height:44px; }
+}
