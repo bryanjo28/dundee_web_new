@@ -9,8 +9,8 @@ export function Menu() {
   const [category, setCategory] = useState<Category>("Semua");
   const items = menuItems.filter((item) => category === "Semua" || item.category === category);
   return <>
-    <div className="menu-toolbar"><div className="menu-filters" role="group" aria-label="Filter kategori menu">{categories.map((item) => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div><span className="template-note">Contoh penempatan menu</span></div>
-    <p className="sr-only" role="status">{items.length} contoh menu ditampilkan untuk kategori {category}.</p>
+    <div className="menu-toolbar"><div className="menu-filters" role="group" aria-label="Filter kategori menu">{categories.map((item) => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div><span className="template-note"></span></div>
+    <p className="sr-only" role="status">{items.length}  menu ditampilkan untuk kategori {category}.</p>
     <div className="menu-grid">{items.map((item) => <article className="menu-item" key={item.id}><div className={`menu-photo menu-photo-${item.category.toLowerCase()}`} data-slot={item.id}>{item.image ? <Image src={item.image} alt={item.name} fill sizes="(min-width: 900px) 30vw, (min-width: 600px) 45vw, 90vw" /> : <div className="photo-placeholder"><PhotoIcon /><span>Foto {item.category.toLowerCase()} kamu di sini</span><small>Foto menu 4:3</small></div>}<span className="category-label" data-keep>{item.category}</span></div><div className="menu-item-heading"><h3>{item.name}</h3>{item.price && <span className="menu-price">{item.price}</span>}</div><p>{item.description}</p></article>)}</div>
     <p className="menu-disclaimer">Nama, foto, dan harga akan disesuaikan dengan menu Dundee.</p>
   </>;

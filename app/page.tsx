@@ -21,7 +21,7 @@ export default function Home() {
       <nav className="nav-glass container" aria-label="Navigasi utama">
         <a className="brand" href="#beranda" aria-label="Dundee, beranda"><Image className="brand-wordmark" src="/assets/logo-dundee-transparent.png" alt="Dundee Resto" width={1959} height={803} priority /></a>
         <div className="desktop-links"><a href="#menu">Menu</a><a href="#cerita">Cerita kami</a><a href="#kunjungi">Lokasi</a></div>
-        <a className="button nav-action" href={restaurant.whatsapp ? `https://wa.me/${restaurant.whatsapp}` : "#pesan"}>Pesan Sekarang <ArrowUpRight size={18} aria-hidden="true" /></a>
+        <a className="button nav-action" href={restaurant.whatsapp ? `https://wa.me/${restaurant.whatsapp}` : "#pesan"}>Hubungi kami <ArrowUpRight size={18} aria-hidden="true" /></a>
         <details className="mobile-nav"><summary aria-label="Buka navigasi">Menu <span aria-hidden="true">☰</span></summary><div><a href="#menu">Menu</a><a href="#cerita">Cerita kami</a><a href="#kunjungi">Lokasi</a><a href="#pesan">Pesan sekarang</a></div></details>
       </nav>
     </ScrollHeader>

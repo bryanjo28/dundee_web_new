@@ -18,9 +18,9 @@ export function TestimonialsCarousel() {
     <ScrollReveal className="testimonials-heading" distance={12}>
       <span className="eyebrow">CERITA DARI MEJA DUNDEE</span>
       <h2 id="testimonials-title">Makan bareng.<br /><em>Cerita bareng.</em></h2>
-      <p className="testimonials-preview">Contoh testimoni · bukan ulasan pelanggan.</p>
+      {/* <p className="testimonials-preview">Testimoni</p> */}
     </ScrollReveal>
-    <div className="testimonials-carousel" role="region" aria-roledescription="carousel" aria-label="Contoh testimoni" onKeyDown={(event) => {
+    <div className="testimonials-carousel" role="region" aria-roledescription="carousel" aria-label="Testimoni" onKeyDown={(event) => {
       if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
         event.preventDefault();
         navigate(event.key === "ArrowRight" ? 1 : -1);
@@ -39,7 +39,7 @@ export function TestimonialsCarousel() {
             transition={{ duration: reducedMotion ? 0 : 0.35, delay: reducedMotion ? 0 : index * 0.07 }}>
             <Quote className="testimonial-quote-icon" size={27} strokeWidth={1.5} aria-hidden="true" />
             <blockquote><p>{testimonial.quote}</p></blockquote>
-            <figcaption><span className="testimonial-avatar" aria-hidden="true">{testimonial.initials.replaceAll(".", "").replaceAll(" ", "")}</span><span><strong>{testimonial.initials}</strong><small>Contoh testimoni</small></span></figcaption>
+            <figcaption><span className="testimonial-avatar" aria-hidden="true">{testimonial.initials.replaceAll(".", "").replaceAll(" ", "")}</span><span><strong>{testimonial.initials}</strong></span></figcaption>
           </motion.figure>)}
         </motion.div>
       </AnimatePresence>

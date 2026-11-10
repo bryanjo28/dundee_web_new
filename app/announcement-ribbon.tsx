@@ -32,7 +32,7 @@ function RibbonGroup({ words, repeat }: { words: string[]; repeat: number }) {
 export function AnnouncementRibbon({
   words = ["Steak", "Rice", "Chicken", "Repeat"],
   badge = "Good mood",
-  ctaText = "Pesan sekarang",
+  ctaText = "Hubungi kami",
   ctaHref = "#pesan",
   repeat = 4,
   pauseOnHover = true,
