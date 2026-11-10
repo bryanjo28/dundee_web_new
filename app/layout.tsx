@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dundee | Steak, Rice & Chicken",
   description: "Jelajahi menu steak, rice, dan chicken Dundee. Rasa enak dan momen hangat untuk setiap cerita di meja makan.",
+  // Icons are served by the app/ file conventions (favicon.ico, icon.png,
+  // apple-icon.png) and app/manifest.ts — no manual <link> tags needed.
+  applicationName: "Dundee",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
