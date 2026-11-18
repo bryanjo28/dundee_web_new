@@ -1,7 +1,7 @@
 // Generate the full Dundee favicon / app-icon set from the real logo badge.
 //
 // Sources:
-//   public/assets/dundee_logo.png  -> square badge, used for the icon mark
+//   scripts/source/dundee_logo.png  -> square badge, used for the icon mark
 // Geometry measured by scripts/measure-badge.mjs (circle centre 628,632; d=1218 on 1254px).
 //
 // Outputs (Favicon + PWA + platform):
@@ -13,12 +13,12 @@
 //
 // Run: node scripts/generate-icons.mjs
 import sharp from "sharp";
-import { mkdirSync, existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SRC = join(ROOT, "public/assets/dundee_logo.png");
+const SRC = join(ROOT, "scripts/source/dundee_logo.png");
 
 const CENTER = { x: 628, y: 632 };
 const DIAMETER = 1218;

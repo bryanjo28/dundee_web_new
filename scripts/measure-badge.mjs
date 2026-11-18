@@ -2,7 +2,7 @@
 // then take a per-row/per-column ink profile to find the outer circle bounds.
 import sharp from "sharp";
 
-const SRC = "public/assets/dundee_logo.png";
+const SRC = "scripts/source/dundee_logo.png";
 const S = 1024; // working resolution for measurement
 
 const meta = await sharp(SRC).metadata();

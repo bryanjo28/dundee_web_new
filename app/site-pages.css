@@ -1,0 +1,70 @@
+/* Shared shell for the sub-pages (/menu, /lokasi). The home page keeps its own
+   section styles in the other app/*.css files. */
+
+.page-hero { background:#F7F3EA; background-image:radial-gradient(ellipse at 82% 0%,#fffaf2,#F7F3EA 68%); }
+.page-hero-inner { padding-block:56px 68px; }
+.page-hero h1 { margin-top:20px; font-size:clamp(2.7rem,5.2vw,4.4rem); }
+.page-hero h1 em { color:var(--red); font-family:Georgia,serif; font-weight:500; }
+.page-lede { max-width:58ch; margin-top:20px; color:var(--muted); font-size:.95rem; line-height:1.78; }
+.page-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; margin-top:30px; }
+.page-hero-note { margin-top:18px; color:var(--muted); font-size:.75rem; }
+
+/* --- /menu ------------------------------------------------------------- */
+.menu-group { padding-block:56px 0; }
+.menu-group-head { display:flex; align-items:end; justify-content:space-between; gap:20px; padding-bottom:16px; margin-bottom:26px; border-bottom:1px solid var(--line); }
+.menu-group-head h2 { margin-top:12px; font-size:clamp(1.9rem,3.4vw,2.9rem); }
+.menu-group-count { color:var(--muted); font-size:.73rem; white-space:nowrap; }
+.menu-page-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+.menu-card { display:flex; flex-direction:column; min-width:0; padding:9px; border:1px solid #e9e3d9; border-radius:22px; background:#fffdf9; box-shadow:0 3px 0 #ece6dd,0 12px 26px #14234506; transition:transform .25s,box-shadow .25s; }
+.menu-card-photo { position:relative; aspect-ratio:1.05; border-radius:15px; overflow:hidden; background:#f1ece3; }
+.menu-card-photo img { object-fit:cover; transition:transform .45s; }
+.menu-card-body { display:flex; flex-direction:column; gap:8px; padding:17px 8px 13px; }
+.menu-card-category { color:var(--red); font-size:.57rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.menu-card-body h3 { font-size:1.08rem; line-height:1.25; }
+.menu-card-body p { color:var(--muted); font-size:.8rem; line-height:1.65; }
+@media(hover:hover) and (pointer:fine) {
+  .menu-card:hover { transform:translateY(-5px); box-shadow:0 4px 0 #e8e0d5,0 18px 30px #14234512; }
+  .menu-card:hover .menu-card-photo img { transform:scale(1.05); }
+}
+
+/* --- /lokasi ----------------------------------------------------------- */
+.location-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding-block:38px 0; }
+.location-card { display:flex; flex-direction:column; padding:28px; border:1px solid var(--line); border-radius:22px; background:var(--paper); }
+.location-card h3 { margin-top:12px; font-size:1.5rem; }
+.location-card p { margin-top:10px; color:var(--muted); font-size:.87rem; line-height:1.72; }
+.location-card p.location-strong { color:var(--navy); font-size:1.02rem; font-weight:700; letter-spacing:-.02em; }
+/* Pin the link to the bottom of the card so links in a row line up even when
+   the text above them differs in length. */
+.location-card .text-link { margin-top:auto; padding-top:16px; font-size:.82rem; }
+/* --- shared closing note ---------------------------------------------- */
+.page-note { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; margin:34px 0 88px; padding:26px 30px; border:1px solid var(--line); border-radius:22px; background:var(--paper); }
+.page-note p { max-width:60ch; color:var(--muted); font-size:.84rem; line-height:1.7; }
+.page-note strong { color:var(--navy); }
+.page-note-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; }
+
+@media(max-width:1100px) { .menu-page-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:900px) {
+  .page-hero-inner { padding-block:44px 54px; }
+  .menu-page-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .location-grid { grid-template-columns:1fr; }
+  .menu-group { padding-block:44px 0; }
+  .menu-group-head { align-items:start; flex-direction:column; gap:6px; }
+  .page-note { margin:28px 0 64px; padding:22px; }
+}
+@media(max-width:650px) {
+  .page-hero-inner { padding-block:34px 44px; }
+  .page-hero h1 { margin-top:14px; }
+  .page-lede { font-size:.89rem; }
+  .page-actions { margin-top:24px; }
+  .page-actions .button { width:100%; }
+  .menu-group { padding-block:36px 0; }
+  .menu-group-head { margin-bottom:20px; }
+  .menu-card { padding:7px; border-radius:18px; }
+  .menu-card-body { padding:14px 6px 11px; gap:6px; }
+  .menu-card-body h3 { font-size:.95rem; }
+  .menu-card-body p { font-size:.75rem; }
+  .page-note-actions { width:100%; }
+  .page-note-actions .button { width:100%; }
+  .page-note { margin:24px 0 52px; }
+}
+@media(prefers-reduced-motion:reduce) { .menu-card,.menu-card-photo img { transition:none; } }
